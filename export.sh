@@ -19,3 +19,5 @@ echo "Vault exported to $EXPORT_FILE"
 bw lock
 
 unset BW_SESSION
+
+tail -f /dev/null
