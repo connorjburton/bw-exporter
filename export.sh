@@ -16,8 +16,4 @@ bw export --format encrypted_json --output "$EXPORT_FILE"
 
 echo "Vault exported to $EXPORT_FILE"
 
-bw lock
-
-unset BW_SESSION
-
 tail -f /dev/null
