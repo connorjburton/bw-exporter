@@ -11,8 +11,8 @@ EXPORT_FILE="$VAULT_EXPORT_DIR/bw-vault.json"
 mkdir -p "$VAULT_EXPORT_DIR"
 
 bw login --apikey --raw
-bw unlock --passwordenv BW_PASSWORD
-bw export --format encrypted_json --password "$BW_PASSWORD" --output "$EXPORT_FILE"
+export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw)
+bw export --format encrypted_json --session "$BW_SESSION" --output "$EXPORT_FILE"
 
 echo "Vault exported to $EXPORT_FILE"
 
