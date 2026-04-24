@@ -17,7 +17,7 @@ RUN apt-get update \
     && apt-get clean
 
 # Create a non-root user for execution
-RUN useradd -m bwuser
+RUN useradd -u 99 -m bwuser
 WORKDIR /home/bwuser
 
 COPY --chown=bwuser:bwuser export.sh /usr/local/bin/export.sh
