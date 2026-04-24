@@ -12,7 +12,7 @@ BW_PASSWORD=$(cat /run/secrets/bw_password) # Keep local, don't export yet
 
 BW_CLIENTID="$BW_CLIENTID" BW_CLIENTSECRET="$BW_CLIENTSECRET" bw login --apikey --nointeraction
 
-export BW_SESSION=$(bw unlock --passwordenv BW_PASSWORD --raw --nointeraction)
+export BW_SESSION=$(bw unlock --passwordfile /run/secrets/bw_password --raw --nointeraction)
 
 unset BW_CLIENTID
 unset BW_CLIENTSECRET
