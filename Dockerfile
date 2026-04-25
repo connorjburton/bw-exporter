@@ -16,7 +16,7 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && apt-get clean
 
-RUN apt-get install curl
+RUN apt-get install curl -y
 
 # Create a non-root user for execution
 RUN useradd -u 99 -m bwuser
